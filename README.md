@@ -2,6 +2,16 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
+## Features
+This app contains the test using the jest for all the screens inside the __tests__ folder and also there is Detox End to end automation testing which test cases is created inside the 
+e2e folder, To run the tests and create the detox build check the Package.json scripts
+
+## Reference 
+https://www.youtube.com/playlist?list=PLukishtN4YG36iLa9IeaA2dGOS0_GTX4l
+
+
+## Start
+
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
