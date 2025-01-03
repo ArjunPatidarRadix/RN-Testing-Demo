@@ -1,8 +1,4 @@
-import {
-  CommonActions,
-  StackActions,
-  createNavigationContainerRef,
-} from '@react-navigation/native';
+import {CommonActions, StackActions} from '@react-navigation/native';
 import {
   goBack,
   navigate,

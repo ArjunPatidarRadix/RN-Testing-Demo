@@ -5,10 +5,11 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
   },
+  modulePaths: ['<rootDir>'],
   transformIgnorePatterns: [
     'node_modules/(?!(react-native|react-native-swiper|react-redux|react-native-linear-gradient|@react-navigation|@react-native|@react-native/assets)/)',
   ],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  testMatch: ['<rootDir>/__tests__/**/*.test.tsx'],
   testPathIgnorePatterns: ['/node_modules/', '/android/', '/ios/'],
   collectCoverage: true,
   moduleNameMapper: {
