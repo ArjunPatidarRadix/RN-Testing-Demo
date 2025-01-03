@@ -5,6 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "lint:fix": "eslint src --fix ",
+    "format": "prettier --check src && prettier --write src",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",

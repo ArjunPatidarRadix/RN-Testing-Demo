@@ -27,10 +27,7 @@ const OnBoardingScreen: FC = () => {
       showsButtons={false}
       paginationStyle={styles.paginationStyle}
       activeDotColor={Colors.primary}
-      activeDotStyle={{
-        width: 0,
-        height: 0,
-      }}
+      activeDotStyle={styles.dotStyle}
       dotColor="#D9D9D9"
       scrollEnabled={true}
       testID="OnBoardingScreen">
@@ -78,6 +75,10 @@ const styles = StyleSheet.create({
     marginRight: w * 0.64,
     marginBottom: h * 0.009,
     bottom: -100,
+  },
+  dotStyle: {
+    width: 0,
+    height: 0,
   },
 });
 

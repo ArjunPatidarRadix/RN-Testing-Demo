@@ -14,7 +14,9 @@ export const registerUser = createAsyncThunk(
   'user/registerUser',
   async (user: Record<string, any>, {rejectWithValue}) => {
     try {
-      if (!user.name || !user.email) throw new Error('Registration failed');
+      if (!user.name || !user.email) {
+        throw new Error('Registration failed');
+      }
       await new Promise(resolve => setTimeout(resolve, 1000));
       return user;
     } catch (error) {
@@ -27,8 +29,9 @@ export const loginUser = createAsyncThunk(
   'user/loginUser',
   async (credentials: Record<string, any>, {rejectWithValue}) => {
     try {
-      if (!credentials.email || !credentials.password)
+      if (!credentials.email || !credentials.password) {
         throw new Error('Login failed');
+      }
       await new Promise(resolve => setTimeout(resolve, 1000));
       return credentials;
     } catch (error) {
@@ -53,13 +56,13 @@ export const userSlice = createSlice({
           state.user = action.payload;
         },
       )
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerUser.rejected, state => {
         state.user = null;
       })
       .addCase(loginUser.fulfilled, (state, action: PayloadAction<object>) => {
         state.user = action.payload;
       })
-      .addCase(loginUser.rejected, (state, action) => {
+      .addCase(loginUser.rejected, state => {
         state.user = null;
       });
   },

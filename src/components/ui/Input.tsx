@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {TextInput, View, Text, TextInputProps} from 'react-native';
+import {TextInput, View, Text, TextInputProps, ViewStyle} from 'react-native';
 import {Colors} from '../../utils/Colors';
 import InputStyle from '../../styles/InputStyle';
 
@@ -26,12 +26,20 @@ const Input: React.FC<InputProps> = ({
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
+  const containerStyle: ViewStyle = {
+    pointerEvents: disabled ? 'none' : 'auto',
+  };
+  const inputContainerStyle: ViewStyle = {
+    borderColor: error
+      ? Colors.errorColor
+      : isFocused
+      ? Colors.primary
+      : Colors.disabled,
+    borderWidth: isFocused || error ? 2 : 1,
+  };
+
   return (
-    <View
-      testID="parentContainer"
-      style={{
-        pointerEvents: disabled ? 'none' : 'auto',
-      }}>
+    <View testID="parentContainer" style={containerStyle}>
       {error && (
         <Text testID="errorText" style={[InputStyle.errorText]}>
           {error}
@@ -39,17 +47,7 @@ const Input: React.FC<InputProps> = ({
       )}
       <View
         testID="inputContainer"
-        style={[
-          InputStyle.inputContainer,
-          {
-            borderColor: error
-              ? Colors.errorColor
-              : isFocused
-              ? Colors.primary
-              : Colors.disabled,
-            borderWidth: isFocused || error ? 2 : 1,
-          },
-        ]}>
+        style={[InputStyle.inputContainer, inputContainerStyle]}>
         <TextInput
           testID="textInput"
           style={InputStyle.input}
