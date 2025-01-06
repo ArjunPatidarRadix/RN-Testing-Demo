@@ -58,6 +58,12 @@ module.exports = {
         //emulator-5554
       },
     },
+    'genymotion.emulator.uuid': {
+      type: 'android.genycloud',
+      device: {
+        recipeUUID: 'bb025f04-240c-470f-b947-4d6840b9b656',
+      },
+    },
   },
   configurations: {
     'ios.sim.debug': {
@@ -82,6 +88,14 @@ module.exports = {
     },
     'android.emu.release': {
       device: 'emulator',
+      app: 'android.release',
+    },
+    'android.genymotion.debug': {
+      device: 'genymotion.emulator.uuid',
+      app: 'android.debug',
+    },
+    'android.genymotion.release': {
+      device: 'genymotion.emulator.uuid',
       app: 'android.release',
     },
   },

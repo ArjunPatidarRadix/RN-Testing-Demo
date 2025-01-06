@@ -1,7 +1,9 @@
 module.exports = {
   project: {
     ios: {},
-    android: {},
+    android: {
+      packageName: 'com.rn_testing_app',
+    },
   },
   'react-native-vector-icons': {
     platforms: {
